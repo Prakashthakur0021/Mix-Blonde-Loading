@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.text {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  border: 2px solid rgb(117, 114, 114);
+  background-color: #fff;
+  padding: 8px 25px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 250px;
+  max-width: 100%;
+}
+
+.text::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: center left;
+  background-color: #fff;
+  mix-blend-mode: difference;
+  width: inherit;
+  height: 100%;
+  transform: scaleX(0);
+  animation: grow 5s ease infinite;
+}
+
+@keyframes grow {
+  to {
+    transform: scaleX(1);
+    color: white;
+  }
+}
